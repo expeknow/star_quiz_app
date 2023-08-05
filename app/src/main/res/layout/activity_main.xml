@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/background_blue"
+    android:orientation="vertical"
+    tools:context="com.expeknow.starquizapp.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:paddingBottom="16dp"
+                android:text="Welcome to Quiz App!"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/brain_logo" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="@string/select_category"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="filled"
+                app:boxStrokeColor="#FFFFFF"
+                app:endIconTint="#FCD108"
+                app:hintEnabled="false"
+                app:startIconTint="#F6CC08">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textColor="#404040"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="Any Category" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Question Count"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="50"
+                    android:min="1"
+                    android:paddingTop="18dp"
+                    android:paddingEnd="0dp"
+                    android:progress="5"
+                    android:progressBackgroundTint="#FFFFFF"
+                    android:progressTint="#FDD109"
+                    android:thumbTint="#FDD109" />
+
+                <TextView
+                    android:id="@+id/progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="5/50"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <RadioGroup
+                android:id="@+id/difficulty_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <RadioButton
+                    android:id="@+id/easy"
+                    style="@android:style/Widget.Material.Light.CompoundButton.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FED009"
+                    android:buttonTint="#FBCD09"
+                    android:checked="true"
+                    android:foregroundTint="#FF0000"
+                    android:padding="10dp"
+                    android:text="Easy"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FF0000"
+                    android:textColorLink="#FF0000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FED009"
+                    android:buttonTint="#FBCD09"
+                    android:foregroundTint="#FF0000"
+                    android:padding="10dp"
+                    android:text="Medium"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/hard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FED009"
+                    android:buttonTint="#FBCD09"
+                    android:foregroundTint="#FF0000"
+                    android:padding="10dp"
+                    android:text="Hard"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/question_type_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <RadioButton
+                    android:id="@+id/multiple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FED009"
+                    android:buttonTint="#FBCD09"
+                    android:checked="true"
+                    android:foregroundTint="#FF0000"
+                    android:padding="8dp"
+                    android:text="Multiple Choice"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FED009"
+                    android:buttonTint="#FBCD09"
+                    android:foregroundTint="#FF0000"
+                    android:padding="8dp"
+                    android:text="True False"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/start_quiz_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#F9A825"
+                android:includeFontPadding="true"
+                android:minHeight="60dp"
+                android:text="START"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
